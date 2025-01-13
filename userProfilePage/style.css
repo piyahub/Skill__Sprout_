@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-image: url('./resources/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* ----------------------------------- nav bar begin ------------------------- */
+
+.nav{
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 260px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+    font-size: larger;
+}
+
+
+#home-page-btn{
+    height: 70px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#home-page-btn:hover{
+    transform: scale(1.1);
+}
+
+#home-page-btn img{
+    height: 60px;
+}
+
+.btn {
+    width: 70px;
+    height: 30px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;  
+}
+
+/* ----------------------------------- nav bar end ------------------------- */
+
+.opaque {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    opacity: 0.3;
+    position: absolute;
+    z-index: 0;
+    border-radius: 20px;
+}
+
+.container {
+    height: 80%;
+    width: 40%;
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    margin: 70px;
+    position: relative;
+    padding: 20px 0px;
+}
+
+.profile{
+    z-index: 1;
+    position: relative;
+    /* border: 1px solid blue; */
+    height: 36%;
+    width: 80%;
+    margin: 20% 15% 20% 5%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.see-progress{
+    height: 40px;
+    width: 100px;
+    /* margin-left:10px; */
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    font-size: medium;
+    padding: 5px;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.see-progress:hover{
+    transform: scale(1.1);
+}
+
+
+

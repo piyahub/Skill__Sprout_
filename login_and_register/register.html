@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="icon.jpg" type="image/jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sprout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="firebaseauth.js"></script>
+</head>
+
+<body>
+   
+    <div class="container" id="signUp">
+        <div class="rocket">
+            <img src="resources/rocket.gif" alt="">
+        </div>
+
+        <div class="form">
+
+            
+            <h1 class="title">Create An Account</h1>
+            <form method="post">
+
+                <div class="input_group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                    <label for="firstName">First Name</label>
+                </div>
+
+
+                <div class="input_group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                    <label for="lastName">Last Name</label>
+                </div>
+
+
+                <div class="input_group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="remail" placeholder="Email" required>
+                    <label for="remail">Email</label>
+                </div>
+
+
+                <div class="input_group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="rpassword" placeholder="Password" required>
+                    <label for="rpassword">Password</label>
+                </div>
+
+                <input type="submit" class="btn" id="signUpBtn" value="Sign Up" name="signUp">
+            </form>
+
+            <!-- <p class="or">
+                <img src="/resources/substract.png" alt="">
+                or
+                <img src="/resources/substract.png" alt="">
+            </p>
+
+            <div class="otherLogin">
+                <img src="/resources/google_logo.png" alt="">
+                <p>Sign Up With Google</p>
+            </div> -->
+
+            <div class="links">
+                <p>Already Have Account?</p>
+                <a href="logIn.html">Log In</a>
+            </div>
+        </div>
+
+    </div>
+    
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <script>
+        // Retrieve the selected language from localStorage
+        const selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+        // Initialize Google Translate with the stored language
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,ta,te,kn,ml,bn,gu,mr,pa,or',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false,
+            }, 'google_translate_element');
+
+            // Wait for the Google Translate iframe to load, then trigger the selected language
+            setTimeout(() => {
+                const iframe = document.querySelector("iframe.goog-te-menu-frame");
+                if (iframe) {
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    const languageOption = iframeDoc.querySelector(`[lang='${selectedLanguage}']`);
+                    if (languageOption) {
+                        languageOption.click();
+                    }
+                }
+            }, 2000); // Wait for the iframe to load
+        }
+
+        // Load Google Translate script dynamically
+        const script = document.createElement('script');
+        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        script.async = true;
+        document.body.appendChild(script);
+
+        // Function to navigate to the next page
+        function goToNextPage() {
+            window.location.href = 'nextpage.html';
+        }
+    </script>
+
+</body>
+
+</html>

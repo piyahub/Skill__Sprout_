@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sprout</title>
+    <link rel="icon" href="icon.jpg" type="image/jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+
+    <p class="suggestions">Career Suggestions Which Suits You.<br/> <span>Choose One to Get a Detailed Path.</span></p>
+
+    <div id="container">
+        <!-- <div class="career-card">
+            <h1>UI Designer</h1>
+            <p>Work Discription</p>
+            <div class="discription">
+                A UI designer focuses on creating visually appealing, functional, and user-friendly interfaces for digital experiences.
+            </div>
+        </div> -->
+    </div> 
+
+    <div class="bottom"></div>
+
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <script>
+        // Retrieve the selected language from localStorage
+        const selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+        // Initialize Google Translate with the stored language
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,ta,te,kn,ml,bn,gu,mr,pa,or',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false,
+            }, 'google_translate_element');
+
+            // Wait for the Google Translate iframe to load, then trigger the selected language
+            setTimeout(() => {
+                const iframe = document.querySelector("iframe.goog-te-menu-frame");
+                if (iframe) {
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    const languageOption = iframeDoc.querySelector(`[lang='${selectedLanguage}']`);
+                    if (languageOption) {
+                        languageOption.click();
+                    }
+                }
+            }, 2000); // Wait for the iframe to load
+        }
+
+        // Load Google Translate script dynamically
+        const script = document.createElement('script');
+        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        script.async = true;
+        document.body.appendChild(script);
+
+        // Function to navigate to the next page
+        function goToNextPage() {
+            window.location.href = 'nextpage.html';
+        }
+    </script>
+
+    <script type="module" src="client.js"></script>
+</body>
+</html>

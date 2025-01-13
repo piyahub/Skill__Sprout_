@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sprout</title>
+    <link rel="icon" href="icon.jpg" type="image/jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .language-container {
+            width: 300px;
+            padding: 30px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border: 2px solid #1e90ff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.1);
+        }
+
+        .language-selector {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            background-color: #f0f8ff;
+            border: 1px solid #1e90ff;
+            border-radius: 5px;
+        }
+
+        .next-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .next-btn:hover {
+            background-color: #4682b4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="language-container">
+        <h2>Select Your Language</h2>
+        <select id="language" class="language-selector">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="ta">Tamil</option>
+            <option value="te">Telugu</option>
+            <option value="bn">Bengali</option>
+            <option value="mr">Marathi</option>
+            <option value="gu">Gujarati</option>
+            <option value="kn">Kannada</option>
+            <option value="ml">Malayalam</option>
+            <option value="pa">Punjabi</option>
+            <option value="or">Odia</option>
+            <option value="ur">Urdu</option>
+        </select>
+        <br>
+        <button class="next-btn" onclick="nextPage()">Next</button>
+    </div>
+
+
+
+    <!-- <script>
+        function saveLanguage() {
+            // Get the selected language from the dropdown
+            const selectedLanguage = document.getElementById('language-selector').value;
+
+            // Save the selected language to localStorage
+            localStorage.setItem('language', selectedLanguage);
+
+            // Redirect to the main website (or homepage)
+            window.location.href = './homePage/homepage.html'; // Update this path if needed
+        }
+    </script> -->
+
+    <script type="text/javascript">
+        // Function to handle redirection to the next page with the selected language
+        function nextPage() {
+            const lang = document.getElementById('language').value;  // Get selected language
+            localStorage.setItem('language', lang);  // Store the selected language in localStorage
+            window.location.href = `./homePage/homepage.html?lang=${lang}`;  // Redirect to next page with the language as URL parameter
+        }
+    </script>
+</body>
+</html>

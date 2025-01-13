@@ -1,0 +1,413 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #e3e4e8, #f6f7fa);
+    color: #333;
+    overflow-x: hidden;
+} 
+
+/* ------------------------ nav bar start ------------------------- */
+
+.nav{
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 260px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+    font-size: larger;
+}
+
+
+#home-page-btn{
+    height: 70px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#home-page-btn:hover{
+    transform: scale(1.1);
+}
+
+#home-page-btn img{
+    height: 60px;
+}
+
+.profile {
+    width: 50px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 10px;
+    font-size: larger;
+    border: 1px solid black;
+    border: 50%;
+}
+
+#profile-page-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+
+#profile-page-btn:hover{
+    transform: scale(1.2);
+}
+
+#profile-page-btn img{
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+}
+
+/* ---------------------------------- nav bar end ----------------------- */
+
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #ccc;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline {
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    /* Remove padding for clear progress visibility */ 
+    overflow: visible;
+    /* Allow children to grow outside bounds */
+}
+
+.timeline-progress {
+    position: absolute;
+    /* height: 100px; */
+    top: 0;
+    width: 4px;
+    background: #0078D7;
+    left: 50%;
+    transform: translateX(-50%);
+    /* height: 0; */
+    transition: height 0.3s ease;
+    /* z-index: 1; */
+    /* Ensure visibility above background */
+}
+
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-item.active {
+    opacity: 1;
+}
+
+.timeline-item:nth-child(odd) {
+    transform: translateX(-8%);
+}
+
+.timeline-item:nth-child(even) {
+    transform: translateX(8%);
+}
+
+.timeline-item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 70%;
+}
+
+.timeline-item h2 {
+    margin: 0 0 10px;
+    font-size: 1.8em;
+    color: #0078D7;
+}
+
+.timeline-item p {
+    margin: 0 0 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #0078D7;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.buttons a:hover {
+    background: #005bb5;
+}
+
+.timeline-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background: #f6f7fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item:nth-child(odd) .timeline-icon {
+    left: -100px;
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+    right: -100px;
+}
+
+.timeline-icon img {
+    width: 50%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 90%;
+        transform: none;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        transform: none;
+    }
+
+    .timeline-icon {
+        position: relative;
+        margin-bottom: 20px;
+        left: 0;
+        right: 0;
+    }
+
+    .timeline-item-content {
+        max-width: 100%;
+    }
+}
+
+/* Trophy styles */
+.trophy {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 1s ease;
+    z-index: 9999;
+}
+
+.trophy img {
+    width: 300px;
+    /* Increased size */
+    height: auto;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.course-complete {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #0078D7;
+    margin-top: 20px;
+    display: none;
+}
+
+/* ------------------------- Styling for quiz start --------------------------- */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    background: white;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 80%;
+    padding: 17px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.ans-btn {
+    border: 1px solid black;
+    background: white;
+    width: 90%;
+    min-height: 50px;
+    margin: 17px auto;
+    border-radius: 8px;
+    text-align: left;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: black;
+    font-weight: 500;
+    font-size: medium;
+
+    overflow-wrap: break-word
+}
+
+.correct {
+    background: #9aeabc;
+}
+
+.wrong {
+    background: #ff9393;
+}
+
+#next-btn {
+    height: 35px;
+    width: 70px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: transparent;
+    font-weight: 500;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+
+#next-btn:disabled {
+    background-color: #d3d3d3;
+    color: #a9a9a9;
+    border: 1px solid #d3d3d3;
+    cursor: default;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* ------------------------- Styling for quiz end --------------------------- */
+
+
+/* ----------------------------- Styling fot feedback start -------------------------------- */
+
+
+svg {
+    margin: 20px 0;
+}
+
+.feedback-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.feedback-content {
+    background: white;
+    border-radius: 8px;
+    width: 40%;
+    padding: 17px 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    height: 80%;
+}
+
+.improve{
+    height: 40%;
+    overflow: scroll;
+}
+
+#improve-topics {
+    margin: 10px 0px 0px 20px;
+    width: 40%;
+}
+
+.topic-item {
+    font-size: larger;
+    padding: 5px;
+}
+
+.close {
+    margin: 35px 0px;
+}
+
+#close-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+/* ----------------------------- Styling fot feedback end-------------------------------- */

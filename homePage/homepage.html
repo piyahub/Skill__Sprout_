@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sprout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/jpg">
+    
+
+    <style>
+        /* .translate-container {
+            margin-top: 50px;
+        } */
+        .translate-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+            /* Adjust the distance below navbar */
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        #google_translate_element select {
+            font-size: 14px;
+            padding: 8px;
+            width: auto;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="logo">
+            <button id="home-page-btn">
+                <img src="../commonResources/whiteLogo.png" alt="">
+            </button>
+
+            <h2>Skill Sprout</h2>
+        </div>
+
+        <div class="profile">
+            <div class="dropdown">
+                <div id="google_translate_element"></div>
+            </div>
+
+            <button id="log-in" class="btn">Log-In</button>
+            <button id="sign-up" class="btn">Sign-Up</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box-1">
+            <div class="animation-1">
+                <img src="./homePageResources/studying.jpg" alt="">
+            </div>
+
+            <div class="text">
+                <h1 class="highlight-text">Skill Sprout</h1>
+                <p class="text-item">A platform that enpowers students.</p>
+                <p class="text-item">Helps them discover new career options.</p>
+                <p class="text-item">And gives them a detailed road map to achieve their dreams.</p>
+            </div>
+        </div>
+
+        <div class="box-2">
+            <div class="text">
+                <p class="text-item">Tell us about <span class="highlight-text">You</span></p>
+                <p class="text-item">What are your intrests?</p>
+                <p class="text-item">And discover <span class="highlight-text">career options</span> which are meant for
+                    you.</p>
+            </div>
+
+            <div class="animation-2">
+                <img src="./homePageResources/checkList.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="box-3">
+            <div class="animation-3">
+                <img src="./homePageResources/roadMap.jpg" alt="">
+            </div>
+
+            <div class="text">
+                <p class="text-item">Not just that !</p>
+                <p class="text-item">We give you a taloired road map.</p>
+                <p class="text-item">To get to the <span class="highlight-text">peak</span> of your potential.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div class="contact-info">
+                <h4>Contact Us</h4>
+                <p>NIT Jalandhar, Punjab, India</p>
+                <p>Email: rajdeepdipu1927@gmail.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <h4>Follow Us</h4>
+                <a href="https://facebook.com">Facebook</a><br>
+                <a href="https://twitter.com">Twitter</a><br>
+                <a href="https://instagram.com">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Skill Sprout. All Rights Reserved.</p>
+            <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <div class="translate-container" id="google_translate_element"></div>
+
+    <!-- Google Translate will be dynamically loaded here -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            const selectedLanguage = localStorage.getItem('lang') || 'en';  // Default to 'en' if not found
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,ta,te,bn,mr,gu,kn,ml,pa,or,ur',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+            
+            // Automatically set the selected language in the dropdown
+            const translateDropdown = document.querySelector('select');
+            translateDropdown.value = selectedLanguage;
+        }
+
+        (function () {
+            var script = document.createElement('script');
+            script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+            document.head.appendChild(script);
+        })();
+    </script>
+
+
+
+    <!-- <script type="text/javascript">
+        // Load Google Translate Script
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,ta,te,bn,mr,gu,kn,ml,pa,or,ur', // Include the languages
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+
+        (function() {
+            var script = document.createElement('script');
+            script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+            document.head.appendChild(script);
+        })();
+
+        // Change language based on user selection from localStorage
+        window.addEventListener('load', function() {
+            const selectedLanguage = localStorage.getItem('lang');
+            if (selectedLanguage) {
+                // Trigger the Google Translate API to load the selected language
+                googleTranslateElementInit();
+            }
+        });
+    </script> -->
+
+    <!-- <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedLang = urlParams.get('lang') || 'en';
+
+        localStorage.setItem('language', selectedLang);
+
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,ta,te,bn,mr,gu,kn,ml,pa,or,ur',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+
+        (function () {
+            var script = document.createElement('script');
+            script.src = "https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate";
+            document.head.appendChild(script);
+        })();
+    </script> -->
+<!-- 
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi,bn,ta,te,ml,kn,mr,gu,pa,as,or,ur,ne',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

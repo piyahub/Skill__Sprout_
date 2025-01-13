@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="icon(1).jpg" type="image/jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sprout</title>
+    <!-- <link rel="shortcut-icon" href="icon(1).png" type="x-icon"> -->
+
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body> 
+    <div class="nav">
+
+        <div class="logo">
+            <button id="home-page-btn" disabled="true">
+                <img src="../commonResources/whiteLogo.png" alt="">
+            </button>
+            <h2>Skill Sprout</h2>
+        </div>
+        
+        <div class="profile-btns">
+            <!-- <button class ="btn" id="home">Home</button> -->
+            <button class ="btn" id="log-out">Log Out</button>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="opaque"></div>
+        
+
+    </div> 
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <script>
+        // Retrieve the selected language from localStorage
+        const selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+        // Initialize Google Translate with the stored language
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,ta,te,kn,ml,bn,gu,mr,pa,or',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false,
+            }, 'google_translate_element');
+
+            // Wait for the Google Translate iframe to load, then trigger the selected language
+            setTimeout(() => {
+                const iframe = document.querySelector("iframe.goog-te-menu-frame");
+                if (iframe) {
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    const languageOption = iframeDoc.querySelector(`[lang='${selectedLanguage}']`);
+                    if (languageOption) {
+                        languageOption.click();
+                    }
+                }
+            }, 2000); // Wait for the iframe to load
+        }
+
+        // Load Google Translate script dynamically
+        const script = document.createElement('script');
+        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        script.async = true;
+        document.body.appendChild(script);
+
+        // Function to navigate to the next page
+        function goToNextPage() {
+            window.location.href = 'nextpage.html';
+        }
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

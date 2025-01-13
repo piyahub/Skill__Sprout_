@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="icon.jpg" type="image/jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sprout</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+
+    <div class="nav">
+
+        <div class="logo">
+            <button id="home-page-btn" disabled="true">
+                <img src="../commonResources/whiteLogo.png" alt="">
+            </button>
+            
+            <h2>Skill Sprout</h2>
+        </div>
+        
+        <div class="profile">
+            <button id="profile-page-btn">
+                <img src="../commonResources/image.png" alt="">
+            </button>
+        </div> 
+
+    </div>
+ 
+    <div class="timeline" id="timeline">
+        <div class="timeline-progress" id="timeline-progress"></div>
+
+        <!-- <div class="timeline-item" id="item1">
+
+            <div class="timeline-item-content">
+                <h2>User Interface (UI) Design Principles</h2>
+                <p>Learn the core principles for designing user-friendly and aesthetically pleasing interfaces.</p>
+                <div class="buttons">
+                    <a href="#" class="test-button" data-target="item1">Resources</a>
+                    <a href="#" class="test-button" data-target="item1">Test</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="timeline-item" id="item2">
+
+            <div class="timeline-item-content">
+                <h2>Android Components</h2>
+                <p>Explore activities, fragments, services, and more for building Android applications.</p>
+                <div class="buttons">
+                    <a href="#" class="test-button" data-target="item2">Resources</a>
+                    <a href="#" class="test-button" data-target="item2">Test</a>
+                </div>
+            </div>
+        </div> -->
+
+
+    </div>
+
+    <!-- Trophy Image -->
+    <div class="trophy" id="trophy">
+        <img src="https://i.pinimg.com/originals/a5/da/be/a5dabea9202dcfef09cb11340fd86192.gif" alt="Trophy">
+    </div>
+    
+    <!-- Course Complete Message -->
+    <div class="course-complete" id="course-complete">
+        Well Done! Course Complete
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h1 id="question-element">Question</h1>
+            <div id="quiz">
+                <button class="ans-btn">Answer-1</button>
+                <button class="ans-btn">Answer-1</button>
+                <button class="ans-btn">Answer-1</button>
+                <button class="ans-btn">Answer-1</button>
+            </div>
+            <div class="next">
+                <button id="next-btn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-popup" id="feedback-popup">
+        <div class="feedback-content">
+
+            <div class="showProgress">
+                <svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+                    <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="5" fill="none" />
+
+                    <circle cx="50" cy="50" r="45" stroke="lightgreen" stroke-width="5" fill="none" stroke-dasharray="282.6"
+                        stroke-dashoffset="282.6" transform="rotate(-90 50 50)" id="progress-circle" />
+
+                    <text x="50" y="55" text-anchor="middle" font-size="10" font-family="Arial" fill="black"
+                        id="progress-text">
+                        0% 
+                    </text>
+                </svg>
+            </div>
+
+            <div class="improve">
+                <h1>Consider brushing up on these topics before moving on to the next module—you're doing great!</h1>
+                
+                <ul id="improve-topics">
+                    <!-- <li class="topic-item">topic-1</li>
+                    <li class="topic-item">topic-1</li>
+                    <li class="topic-item">topic-1</li>
+                    <li class="topic-item">topic-1</li> -->
+                </ul>
+
+            </div>
+            
+
+            <div class="close">
+                <button id="close-btn">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <script>
+        // Retrieve the selected language from localStorage
+        const selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+        // Initialize Google Translate with the stored language
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,ta,te,kn,ml,bn,gu,mr,pa,or',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false,
+            }, 'google_translate_element');
+
+            // Wait for the Google Translate iframe to load, then trigger the selected language
+            setTimeout(() => {
+                const iframe = document.querySelector("iframe.goog-te-menu-frame");
+                if (iframe) {
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    const languageOption = iframeDoc.querySelector(`[lang='${selectedLanguage}']`);
+                    if (languageOption) {
+                        languageOption.click();
+                    }
+                }
+            }, 2000); // Wait for the iframe to load
+        }
+
+        // Load Google Translate script dynamically
+        const script = document.createElement('script');
+        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        script.async = true;
+        document.body.appendChild(script);
+
+        // Function to navigate to the next page
+        function goToNextPage() {
+            window.location.href = 'nextpage.html';
+        }
+    </script>
+
+    <script type="module" src="client.js"></script>
+    <script src="../navBar.js"></script>
+
+</body>
+</html>

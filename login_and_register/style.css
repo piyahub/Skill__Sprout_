@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body{
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    position: relative;
+}  
+
+.superContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container{
+    background: #ffffff;
+    height: 65%;
+    width: 100%;
+    padding: 5px;
+    border: none;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    height: 100%;
+    width: 40%;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+input{
+    color: inherit;
+    height: 60px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding-left: 1.5rem;
+    font-size: 15px;
+}
+
+input::placeholder{
+    color: transparent;
+}
+.input_group{
+    padding: 1% 0;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+.input_group i{
+    position: absolute;
+    left: 6px;
+    top: 23px;
+    color: black;
+}
+.input:focus{
+    border: 2px solid black;
+}
+input:placeholder{
+    color:transparent;
+}
+label{
+    color: #757575;
+    position: relative;
+    left: 35px;
+    top: -39px;
+    cursor:auto; 
+    transition: 0.3s ease all;
+}
+input:focus~label, input:not(:placeholder-shown)~label{
+    top: -8em;
+    color: #067aff;
+    font-size: 7px;
+}
+
+.btn{
+    font-size: 1.1rem;
+    padding: 8px 0;
+    width: 100%;
+    border: 2px solid black;
+    width: 90%;
+    background: black;
+    cursor: pointer;
+    color: white;
+}
+.btn:hover{
+    background: white;
+    color: black;
+    transition: ease-out 0.25s;
+}
+.or{
+    display: flex;
+    margin-top: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.otherLogin{
+    display: flex;
+    align-items: center;
+
+    
+    background: white;
+    width: 60%;
+    margin: 20px auto;
+    border: 2px solid black;
+    border-radius: 10px;
+
+}
+
+.rocket{
+    width: 40%;
+}
+.rocket img{
+    height: 400px;
+    width: auto;
+}
+
+.otherLogin img{
+    height: 60px;
+    width: auto;
+}
+
+.or img{
+    height: 20px;
+    width: 100px;
+}
+
+.or {
+    text-align: center;
+}
+
+.links{
+    display: flex;
+    padding: 0.4rem;
+    margin-top: 0.9rem;
+}
+.links p{
+    font-weight: 500;
+    padding: 2px 7px;
+}
+
+.links a{
+    text-decoration: none;
+    font-size: medium;
+    font-weight: 600;
+}
