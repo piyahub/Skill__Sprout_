@@ -56,7 +56,8 @@ Skill Sprout aims to:
 🌟 **Holistic Focus** – Emphasis on **overall professional growth**, including **soft skills**.  
 
 ---
-
+![skill_sprout](https://github.com/piyahub/Skill__Sprout_/blob/main/Screenshot%202025-03-04%20162754.png)
+![skill_sprout]()
 🎉 **Skill Sprout** combines **advanced technology**, **personalized feedback**, and a **comprehensive learning approach** to empower users to **achieve their career aspirations** with **confidence and efficiency**. 🚀✨  
 
 ---
