@@ -36,5 +36,4 @@ Welcome to **Skill Sprout**, an all-in-one AI-driven platform designed to help j
 ---
 
 
-   git clone https://github.com/piyahub/Skill__Sprout_.git
 
