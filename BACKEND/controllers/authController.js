@@ -41,7 +41,7 @@ const register = async (req, res) => {
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f5f7fa; padding: 20px;">
         <div style="background: linear-gradient(135deg, #007bff, #00d4ff); border-radius: 8px 8px 0 0; padding: 20px; text-align: center;">
           <img src="https://res.cloudinary.com/dgtyqhtor/image/upload/v1753158073/logo_ozh2lv.png" alt="[Your App Name] Logo" style="max-width: 150px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;" />
-          <h1 style="color: #ffffff; font-size: 24px; margin: 0;">Welcome to AI CAREER COACH</h1>
+          <h1 style="color: #ffffff; font-size: 24px; margin: 0;">Welcome to SKILLSPROUT</h1>
         </div>
         <div style="background-color: #ffffff; border-radius: 0 0 8px 8px; padding: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
           <h2 style="color: #333; font-size: 20px; text-align: center; margin-bottom: 20px;">Verify Your Email Address</h2>
@@ -58,7 +58,7 @@ const register = async (req, res) => {
           </ol>
           <p style="color: #888; font-size: 12px; text-align: center;">If you didn’t request this email, please ignore it or contact our support team at <a href="mailto:ag0567688@gmail.com" style="color: #007bff; text-decoration: none;">ag0567688@gmail.com</a>.</p>
           <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-          <p style="color: #888; font-size: 12px; text-align: center;">© ${new Date().getFullYear()} AI CAREER COACH. All rights reserved.</p>
+          <p style="color: #888; font-size: 12px; text-align: center;">© ${new Date().getFullYear()} SKILLSPROUT. All rights reserved.</p>
         </div>
         <style>
           @media only screen and (max-width: 600px) {
@@ -79,7 +79,7 @@ const register = async (req, res) => {
     }
 
     // Send welcome email
-    const welcomeSubject = 'Welcome to AI CAREER COACH';
+    const welcomeSubject = 'Welcome to SKILLSPROUT';
     const welcomeText = `Hello ${name},\n\nThank you for registering with AI CAREER COACH. Your account has been successfully created. Please verify your email address using the OTP sent in a separate email to start using your account.\n\nBest regards,\nThe AI CAREER COACH Team`;
     const welcomeHtml = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f5f7fa; padding: 20px;">
@@ -99,7 +99,7 @@ const register = async (req, res) => {
           </ul>
           <p style="color: #888; font-size: 12px; text-align: center;">If you didn’t sign up for AI CAREER COACH, please ignore this email or reach out to our support team.</p>
           <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-          <p style="color: #888; font-size: 12px; text-align: center;">© ${new Date().getFullYear()} AI CAREER COACH. All rights reserved.</p>
+          <p style="color: #888; font-size: 12px; text-align: center;">© ${new Date().getFullYear()} SKILLSPROUT. All rights reserved.</p>
         </div>
         <style>
           @media only screen and (max-width: 600px) {
