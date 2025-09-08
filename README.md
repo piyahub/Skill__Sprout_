@@ -1,6 +1,6 @@
 # 🌱 Skill Sprout – Your AI-Powered Career Companion 🚀
 
-Welcome to **Skill Sprout**, an all-in-one AI-driven platform designed to help job seekers and professionals boost their careers with smart tools for **career planning, resume building, interview preparation, and more**.  
+Welcome to **Skill Sprout**, an all-in-one AI-driven platform designed to help job seekers and professionals boost their careers with smart tools for **career planning, interview preparation, and more**.  
 
 ---
 
@@ -20,7 +20,7 @@ Welcome to **Skill Sprout**, an all-in-one AI-driven platform designed to help j
 | 🎨 Frontend | React, Vite, Tailwind CSS         |
 | ⚙️ Backend  | Node.js, Express.js, MongoDB      |
 | 🤖 AI       | Gemini API                        |
-| 🌍 Deploy   | Netlify (Frontend), Render (Backend) |
+
 
 ---
 
