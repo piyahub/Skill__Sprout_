@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import st1 from "/st1.jpg";
-import st2 from "/st2.png";
-import st3 from "/st3.jpeg";
-import st4 from "/st5.jpeg";
+// import st1 from "/st1.jpg";
+// import st2 from "/st2.png";
+// import st3 from "/st3.jpeg";
+// import st4 from "/st5.jpeg";
 
 
 const About = () => {
